@@ -1,7 +1,7 @@
 // Describe out test: we are testing the HomeController
 describe('Controller: HomeController', function() {
 
-  beforeEach('myApp');
+  beforeEach(module('myApp'));
 
   var cut; // short for Controller Under Test
 

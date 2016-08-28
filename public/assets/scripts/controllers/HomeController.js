@@ -3,7 +3,7 @@
 
   angular
     .module('myApp')
-    .controller('HomeController', HomeController);
+    .controller('HomeController', [HomeController]);
 
   function HomeController(){
     var self = this;
@@ -12,8 +12,11 @@
     console.log(self.data);
 
     self.returnNumber = function(){
-      return 8;
+      var num = 8;
+      return num;
     };
+
+    self.returnNumber();
 
 
   }
