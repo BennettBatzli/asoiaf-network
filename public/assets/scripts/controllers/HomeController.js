@@ -3,9 +3,9 @@
 
   angular
     .module('myApp')
-    .controller('HomeController', [HomeController]);
+    .controller('HomeController', ['$http', HomeController]);
 
-  function HomeController(){
+  function HomeController($http){
     var self = this;
     self.data = 'DATA!!';
     console.log(self);
@@ -18,7 +18,11 @@
 
     self.returnNumber();
 
-
+    (function () {
+      $http.get('/character').then(function (response) {
+        console.log('RESPONSE.data ::', response.data)
+      });
+    })();
   }
 
 })();
